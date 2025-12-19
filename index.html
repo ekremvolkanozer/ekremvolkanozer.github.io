@@ -7,23 +7,46 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary-color: #1a252f; --accent-color: #c7a44a; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; }
-        .navbar { background-color: var(--primary-color); border-bottom: 3px solid var(--accent-color); }
-        .hero { background: linear-gradient(rgba(26, 37, 47, 0.8), rgba(26, 37, 47, 0.8)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); 
-                background-size: cover; height: 80vh; display: flex; align-items: center; color: white; }
-        .btn-accent { background-color: var(--accent-color); color: white; border: none; }
-        .btn-accent:hover { background-color: #b08e3d; color: white; }
-        .section-padding { padding: 80px 0; }
-        .icon-box { color: var(--accent-color); font-size: 2.5rem; margin-bottom: 20px; }
-        footer { background-color: var(--primary-color); color: white; padding: 40px 0; }
+        :root { 
+            --turkish-red: #E30A17; 
+            --turquoise-blue: #00FFEF; 
+            --dark-red: #b30000;
+        }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #ffffff; color: #333; }
+        
+        /* Navigasyon */
+        .navbar { background-color: white; border-bottom: 4px solid var(--turkish-red); }
+        .navbar-brand, .nav-link { color: #1a1a1a !important; font-weight: bold; }
+        .nav-link:hover { color: var(--turkish-red) !important; }
+
+        /* Hero Bölümü */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1350&q=80'); 
+            background-size: cover; height: 70vh; display: flex; align-items: center; color: white; 
+        }
+        
+        /* Ortak Vurgular */
+        .btn-turkuaz { background-color: #00CED1; color: white; border: none; font-weight: bold; }
+        .btn-turkuaz:hover { background-color: var(--turquoise-blue); color: #1a1a1a; }
+        .section-title { color: var(--turkish-red); font-weight: bold; margin-bottom: 40px; }
+        .icon-box { color: #00CED1; font-size: 2.5rem; margin-bottom: 15px; }
+        
+        /* Kartlar */
+        .card { border-top: 5px solid var(--turkish-red); transition: transform 0.3s; }
+        .card:hover { transform: translateY(-10px); }
+
+        /* Makale Linkleri */
+        .article-link { text-decoration: none; color: #333; display: block; padding: 10px; border-bottom: 1px solid #eee; }
+        .article-link:hover { background-color: #f8f9fa; color: var(--turkish-red); }
+
+        footer { background-color: #1a1a1a; color: white; padding: 40px 0; }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">AV. EKREM VOLKAN ÖZER</a>
+            <a class="navbar-brand" href="#">AV. EKREM VOLKAN ÖZER</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -31,6 +54,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#anasayfa">Ana Sayfa</a></li>
                     <li class="nav-item"><a class="nav-link" href="#hizmetler">Hizmetler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#makaleler">Makaleler</a></li>
                     <li class="nav-item"><a class="nav-link" href="#iletisim">İletişim</a></li>
                 </ul>
             </div>
@@ -39,63 +63,101 @@
 
     <section id="anasayfa" class="hero">
         <div class="container text-center">
-            <h1 class="display-3 fw-bold">Adalet ve Güven</h1>
-            <p class="lead mb-4">Hukuki sorunlarınıza profesyonel ve sonuç odaklı çözümler.</p>
-            <a href="tel:+905326800897" class="btn btn-accent btn-lg"><i class="fas fa-phone"></i> Hemen Arayın</a>
+            <h1 class="display-4 fw-bold">Hukukta Tecrübe ve Şeffaflık</h1>
+            <p class="lead">Adaletin peşinde, haklarınızın savunucusuyuz.</p>
+            <a href="tel:+905326800897" class="btn btn-turkuaz btn-lg mt-3 shadow">Hemen Arayın</a>
         </div>
     </section>
 
-    <section id="hizmetler" class="section-padding bg-light">
+    <section id="hizmetler" class="py-5">
         <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Çalışma Alanları</h2>
-                <div style="width: 60px; height: 3px; background: var(--accent-color); margin: 20px auto;"></div>
-            </div>
+            <h2 class="text-center section-title">Çalışma Alanlarımız</h2>
             <div class="row g-4 text-center">
-                <div class="col-md-4">
-                    <div class="p-4 border rounded bg-white shadow-sm">
+                <div class="col-md-3">
+                    <div class="card h-100 p-4 shadow-sm">
+                        <i class="fas fa-car-crash icon-box"></i>
+                        <h5>Sigorta Hukuku & Trafik Kazaları</h5>
+                        <p class="small text-muted">Maddi ve manevi tazminat süreçleri, sigorta rücu davaları.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card h-100 p-4 shadow-sm">
                         <i class="fas fa-gavel icon-box"></i>
-                        <h4>Ceza Hukuku</h4>
-                        <p>Soruşturma ve kovuşturma aşamalarında titiz savunma stratejileri.</p>
+                        <h5>Ceza Hukuku</h5>
+                        <p class="small text-muted">Ağır ceza ve asliye ceza mahkemelerinde savunmanlık.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="p-4 border rounded bg-white shadow-sm">
+                <div class="col-md-3">
+                    <div class="card h-100 p-4 shadow-sm">
                         <i class="fas fa-users icon-box"></i>
-                        <h4>Aile Hukuku</h4>
-                        <p>Boşanma, velayet ve nafaka süreçlerinde gizlilik esaslı danışmanlık.</p>
+                        <h5>Aile Hukuku</h5>
+                        <p class="small text-muted">Boşanma, anlaşmalı protokoller ve velayet davaları.</p>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="p-4 border rounded bg-white shadow-sm">
+                <div class="col-md-3">
+                    <div class="card h-100 p-4 shadow-sm">
                         <i class="fas fa-building icon-box"></i>
-                        <h4>Gayrimenkul</h4>
-                        <p>Tapu uyuşmazlıkları, kira kontratları ve mülkiyet davaları yönetimi.</p>
+                        <h5>Gayrimenkul Hukuku</h5>
+                        <p class="small text-muted">Tapu tescil, izale-i şuyu ve kira tahliye davaları.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="iletisim" class="section-padding">
+    <section id="makaleler" class="py-5 bg-light">
         <div class="container">
+            <h2 class="text-center section-title">Güncel Makaleler</h2>
             <div class="row">
-                <div class="col-md-6">
-                    <h2 class="fw-bold mb-4">İletişim Bilgileri</h2>
-                    <p><i class="fas fa-map-marker-alt me-2 text-accent"></i> Hasanpaşa Mah. Uzunçayır Cad. Konak İş Merkezi A Blok No: 30 İç Kapı No: 30 Kadıköy/ İstanbul</p>
-                    <p><i class="fas fa-phone me-2 text-accent"></i> +90 532 680 08 97</p>
-                    <p><i class="fas fa-envelope me-2 text-accent"></i> av.ekremvolkanozer@gmail.com</p>
-                </div>
-                <div class="col-md-6">
-                    <div class="card p-4 shadow-sm">
-                        <h4 class="mb-3">Bize Mesaj Gönderin</h4>
-                        <form>
-                            <input type="text" class="form-control mb-3" placeholder="Adınız Soyadınız">
-                            <input type="email" class="form-control mb-3" placeholder="E-posta Adresiniz">
-                            <textarea class="form-control mb-3" rows="4" placeholder="Konu hakkındaki mesajınız"></textarea>
-                            <button class="btn btn-accent w-100">Gönder</button>
-                        </form>
+                <div class="col-md-8 mx-auto">
+                    <div class="bg-white p-4 rounded shadow-sm">
+                        <h5 class="mb-4" style="color: #1a1a1a; border-left: 4px solid #00CED1; padding-left: 10px;">Son Yazılar</h5>
+                        
+                        <a href="makale-detay.html" class="article-link">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span><i class="far fa-file-alt me-2 text-danger"></i> Trafik Kazalarında Tazminat Hesaplama Esasları</span>
+                                <i class="fas fa-chevron-right small text-muted"></i>
+                            </div>
+                        </a>
+                        
+                        <a href="makale-detay.html" class="article-link">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span><i class="far fa-file-alt me-2 text-danger"></i> İş Kazası Sonrası Yapılması Gereken Hukuki İşlemler</span>
+                                <i class="fas fa-chevron-right small text-muted"></i>
+                            </div>
+                        </a>
+                        
+                        <a href="makale-detay.html" class="article-link">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span><i class="far fa-file-alt me-2 text-danger"></i> Kiracı Tahliye Süreçlerinde Yeni Düzenlemeler</span>
+                                <i class="fas fa-chevron-right small text-muted"></i>
+                            </div>
+                        </a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="iletisim" class="py-5">
+        <div class="container">
+            <h2 class="text-center section-title">Bize Ulaşın</h2>
+            <div class="row">
+                <div class="col-md-5">
+                    <p class="mb-2"><strong>Adres:</strong></p>
+                    <p>Hasanpaşa Mah. Uzunçayır Cad. Konak İş Merkezi A Blok No: 30 İç Kapı No: 30 Kadıköy/ İstanbul</p>
+                    <p class="mb-2"><strong>Telefon:</strong></p>
+                    <p><a href="tel:+905326800897" class="text-decoration-none text-dark">+90 532 680 08 97</a></p>
+                    <p class="mb-2"><strong>E-posta:</strong></p>
+                    <p>av.ekremvolkanozer@gmail.com</p>
+                </div>
+                <div class="col-md-7">
+                    <form class="bg-light p-4 rounded shadow-sm">
+                        <div class="mb-3"><input type="text" class="form-control" placeholder="Adınız Soyadınız"></div>
+                        <div class="mb-3"><input type="email" class="form-control" placeholder="E-posta Adresiniz"></div>
+                        <div class="mb-3"><textarea class="form-control" rows="3" placeholder="Mesajınız"></textarea></div>
+                        <button type="submit" class="btn btn-turkuaz w-100">Mesaj Gönder</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -103,8 +165,7 @@
 
     <footer>
         <div class="container text-center">
-            <p>&copy; 2024 Av. Ekrem Volkan Özer. Tüm Hakları Saklıdır.</p>
-            <small>Bu site Türkiye Barolar Birliği Reklam Yasağı Yönetmeliği'ne uygun olarak tasarlanmıştır.</small>
+            <p class="mb-0">© 2024 Av. Ekrem Volkan Özer. Tüm Hakları Saklıdır.</p>
         </div>
     </footer>
 
