@@ -3,69 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Av. Ekrem Volkan Özer | Hukuk Bürosu</title>
+    <title>Av. Ekrem Volkan Özer | Hukuk & Danışmanlık</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Baskervville&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { 
-            --charcoal: #22313f;    /* Koyu Kömür Grisi - Ciddiyet */
-            --steel-blue: #34495e;  /* Çelik Mavisi - Güven */
-            --silver: #bdc3c7;      /* Gümüş - Detay */
-            --accent-blue: #2980b9; /* Canlı Mavi - Linkler ve Butonlar */
+            --deep-charcoal: #1a1a1a;  /* Koyu Antrasit Arka Plan */
+            --imperial-red: #8e0000;   /* Asil Vişne Kırmızısı */
+            --silver-grey: #e0e0e0;    /* Yumuşak Gri Metin */
         }
         
-        body { font-family: 'Roboto', sans-serif; background-color: #fcfcfc; color: #2c3e50; }
-        h1, h2, h3, .navbar-brand { font-family: 'Baskervville', serif; letter-spacing: 0.5px; }
+        body { font-family: 'Lora', serif; background-color: #ffffff; color: #1a1a1a; }
+        h1, h2, h3, .navbar-brand { font-family: 'Playfair Display', serif; }
 
-        /* Navigasyon - Üst Düzey Kurumsal */
-        .navbar { background-color: var(--charcoal); padding: 20px 0; border-bottom: 4px solid var(--accent-blue); }
-        .navbar-brand { color: white !important; font-size: 1.6rem; }
-        .nav-link { color: rgba(255,255,255,0.8) !important; font-weight: 400; margin-left: 20px; transition: 0.3s; }
-        .nav-link:hover { color: white !important; transform: translateY(-2px); }
+        /* Navbar */
+        .navbar { background-color: var(--deep-charcoal); border-bottom: 4px solid var(--imperial-red); padding: 20px 0; }
+        .navbar-brand { color: white !important; font-weight: bold; letter-spacing: 1px; }
+        .nav-link { color: var(--silver-grey) !important; font-weight: 400; margin-left: 20px; transition: 0.3s; }
+        .nav-link:hover { color: var(--imperial-red) !important; }
 
-        /* Hero Bölümü - Dramatik ve Ciddi */
+        /* Hero Bölümü */
         .hero { 
-            background: linear-gradient(rgba(34, 49, 63, 0.9), rgba(34, 49, 63, 0.8)), url('https://images.unsplash.com/photo-1473186578172-c141e6798ee4?auto=format&fit=crop&w=1350&q=80'); 
-            background-size: cover; background-position: center; height: 60vh; display: flex; align-items: center; color: white; border-bottom: 10px solid var(--silver);
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1589829016172-85d8b2182ee0?auto=format&fit=crop&w=1350&q=80'); 
+            background-size: cover; height: 60vh; display: flex; align-items: center; color: white; border-bottom: 8px solid var(--imperial-red);
         }
-        .hero h1 { font-size: 3.5rem; border-bottom: 2px solid var(--accent-blue); display: inline-block; padding-bottom: 10px; margin-bottom: 20px; }
-        .btn-law { background-color: var(--accent-blue); color: white; border: none; padding: 15px 45px; font-weight: bold; border-radius: 0; transition: 0.3s; }
-        .btn-law:hover { background-color: #1f6391; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; }
+        .btn-red { background-color: var(--imperial-red); color: white; border-radius: 0; padding: 15px 45px; font-weight: bold; border: none; transition: 0.3s; }
+        .btn-red:hover { background-color: #660000; color: white; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(142, 0, 0, 0.4); }
 
-        /* Çalışma Alanları - Grid Düzeni */
-        .area-card { background: white; border: 1px solid #eee; padding: 40px 25px; transition: 0.3s; border-radius: 0; height: 100%; border-bottom: 3px solid transparent; }
-        .area-card:hover { border-bottom-color: var(--accent-blue); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
-        .area-card i { color: var(--charcoal); font-size: 2.5rem; margin-bottom: 20px; }
-        .area-card h4 { color: var(--charcoal); font-weight: bold; }
+        /* Hizmetler */
+        .service-card { border: 1px solid #eee; padding: 50px 30px; transition: 0.4s; background: #fff; border-top: 4px solid var(--deep-charcoal); }
+        .service-card:hover { border-top-color: var(--imperial-red); transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .service-card i { color: var(--imperial-red); font-size: 2.8rem; margin-bottom: 25px; }
 
-        /* Makaleler - Zarif Liste */
-        .article-section { background-color: #f4f7f6; padding: 80px 0; }
-        .article-item { background: white; padding: 20px; margin-bottom: 15px; display: flex; align-items: center; transition: 0.3s; border-left: 0 solid var(--accent-blue); }
-        .article-item:hover { border-left-width: 8px; padding-left: 30px; text-decoration: none; }
-        .article-item a { color: var(--charcoal); font-weight: bold; text-decoration: none; flex-grow: 1; }
+        /* Makaleler */
+        .article-box { border-left: 4px solid var(--imperial-red); background: #f9f9f9; padding: 20px; margin-bottom: 15px; transition: 0.3s; cursor: pointer; }
+        .article-box:hover { background: #f0f0f0; padding-left: 30px; }
+        .article-box a { text-decoration: none; color: #1a1a1a; font-weight: 600; font-size: 1.1rem; }
 
-        /* İletişim - İki Bölümlü */
-        .contact-box { background: white; box-shadow: 0 0 50px rgba(0,0,0,0.05); }
-        .contact-details { background: var(--charcoal); color: white; padding: 50px; }
-        .form-area { padding: 50px; }
-        .form-control { border-radius: 0; border: 1px solid #ccc; padding: 15px; }
+        /* İletişim */
+        .contact-section { background-color: var(--deep-charcoal); color: white; padding: 80px 0; }
+        .form-control { border-radius: 0; padding: 15px; border: 1px solid #333; background: #262626; color: white; }
+        .form-control:focus { background: #333; color: white; border-color: var(--imperial-red); box-shadow: none; }
 
-        footer { background: #1a242f; color: #888; padding: 40px 0; }
+        footer { background: #000; color: #666; padding: 40px 0; border-top: 1px solid #222; }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg sticky-top shadow">
+    <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">AV. EKREM VOLKAN ÖZER</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#anasayfa">ANA SAYFA</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#hizmetler">UZMANLIK ALANLARI</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hizmetler">UZMANLIK</a></li>
                     <li class="nav-item"><a class="nav-link" href="#makaleler">MAKALELER</a></li>
                     <li class="nav-item"><a class="nav-link" href="#iletisim">İLETİŞİM</a></li>
                 </ul>
@@ -73,107 +66,95 @@
         </div>
     </nav>
 
-    <section id="anasayfa" class="hero text-center">
+    <section id="anasayfa" class="hero text-center text-md-start">
         <div class="container">
-            <h1 class="display-3">Hukuk ve Strateji</h1>
-            <p class="lead mb-4 fs-3">Haklarınızın Korunmasında Profesyonel Çözüm Ortağınız.</p>
-            <a href="tel:+905326800897" class="btn btn-law">DANIŞMANLIK ALIN</a>
+            <h1 class="display-3 fw-bold">Hukuk, Disiplin ve<br>Tecrübe</h1>
+            <p class="lead mb-4 fs-4 opacity-75">Kadıköy'de hukuki süreçleriniz için kararlı savunma.</p>
+            <a href="tel:+905326800897" class="btn btn-red">İLETİŞİME GEÇİN</a>
         </div>
     </section>
 
-    <section id="hizmetler" class="py-5 bg-white">
+    <section id="hizmetler" class="py-5">
         <div class="container py-5">
-            <h2 class="text-center mb-5 fw-bold" style="color: var(--charcoal);">Çalışma Alanları</h2>
+            <h2 class="text-center mb-5 fw-bold">Çalışma Alanlarımız</h2>
             <div class="row g-4 text-center">
                 <div class="col-md-3">
-                    <div class="area-card">
-                        <i class="fas fa-car-side"></i>
-                        <h4>Sigorta & Trafik</h4>
-                        <p class="small text-muted">Tazminat hukuku ve sigorta uyuşmazlıkları yönetimi.</p>
+                    <div class="service-card shadow-sm">
+                        <i class="fas fa-car-burst"></i>
+                        <h4 class="fw-bold">Sigorta & Trafik</h4>
+                        <p class="small text-muted">Kaza tazminatı ve sigorta hukuku uzmanlığı.</p>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="area-card">
-                        <i class="fas fa-gavel"></i>
-                        <h4>Ceza Hukuku</h4>
-                        <p class="small text-muted">Soruşturma ve kovuşturma süreçlerinde etkin savunma.</p>
+                    <div class="service-card shadow-sm">
+                        <i class="fas fa-scale-balanced"></i>
+                        <h4 class="fw-bold">Ceza Hukuku</h4>
+                        <p class="small text-muted">Ağır ceza ve asliye hukuk savunmanlığı.</p>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="area-card">
-                        <i class="fas fa-users"></i>
-                        <h4>Aile Hukuku</h4>
-                        <p class="small text-muted">Boşanma, velayet ve mal paylaşımı davaları.</p>
+                    <div class="service-card shadow-sm">
+                        <i class="fas fa-users-rectangle"></i>
+                        <h4 class="fw-bold">Aile Hukuku</h4>
+                        <p class="small text-muted">Hassas süreçlerde profesyonel yönetim.</p>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="area-card">
-                        <i class="fas fa-landmark"></i>
-                        <h4>Gayrimenkul</h4>
-                        <p class="small text-muted">Tapu iptal tescil ve kentsel dönüşüm hukuku.</p>
+                    <div class="service-card shadow-sm">
+                        <i class="fas fa-landmark-dome"></i>
+                        <h4 class="fw-bold">Gayrimenkul</h4>
+                        <p class="small text-muted">Mülkiyet ve kira uyuşmazlıkları çözümü.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="makaleler" class="article-section">
-        <div class="container">
-            <h2 class="mb-5 fw-bold" style="color: var(--charcoal);">Hukuki Makaleler</h2>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="article-item">
-                        <a href="#">Sigorta Şirketlerine Karşı Açılacak Tazminat Davaları</a>
-                        <i class="fas fa-external-link-alt text-muted"></i>
+    <section id="makaleler" class="py-5 bg-light">
+        <div class="container py-4">
+            <h2 class="mb-5 fw-bold text-center">Hukuki Makaleler</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="article-box">
+                        <a href="#">Trafik Kazalarında Manevi Tazminat Talebi</a>
                     </div>
-                    <div class="article-item">
-                        <a href="#">Kira Sözleşmelerinde Tahliye Sebepleri ve Süreler</a>
-                        <i class="fas fa-external-link-alt text-muted"></i>
+                    <div class="article-box">
+                        <a href="#">Kira Tahliye Davalarında Arabuluculuk Süreci</a>
                     </div>
-                    <div class="article-item">
-                        <a href="#">Haksız Tutuklama Nedeniyle Maddi ve Manevi Tazminat</a>
-                        <i class="fas fa-external-link-alt text-muted"></i>
+                    <div class="article-box">
+                        <a href="#">Haksız Arama ve Elkoyma Kararlarına İtiraz</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="iletisim" class="py-5 bg-white">
+    <section id="iletisim" class="contact-section">
         <div class="container">
-            <div class="row g-0 contact-box">
-                <div class="col-md-5 contact-details">
-                    <h3 class="fw-bold mb-4">İletişim</h3>
-                    <div class="mb-4">
-                        <label class="text-white-50 d-block">Adres</label>
-                        <span>Hasanpaşa Mah. Uzunçayır Cad. Konak İş Merkezi A Blok Kadıköy/ İstanbul</span>
-                    </div>
-                    <div class="mb-4">
-                        <label class="text-white-50 d-block">Telefon</label>
-                        <span class="fs-5">+90 532 680 08 97</span>
-                    </div>
-                    <div class="mb-4">
-                        <label class="text-white-50 d-block">E-posta</label>
-                        <span>av.ekremvolkanozer@gmail.com</span>
-                    </div>
+            <div class="row g-5">
+                <div class="col-md-4">
+                    <h2 class="fw-bold mb-4 border-bottom border-danger pb-3">İletişim</h2>
+                    <p class="mb-4"><strong>Ofis:</strong> Hasanpaşa Mah. Uzunçayır Cad. Konak İş Merkezi A Blok Kadıköy/ İstanbul</p>
+                    <p class="mb-4"><strong>Telefon:</strong> +90 532 680 08 97</p>
+                    <p><strong>E-posta:</strong> av.ekremvolkanozer@gmail.com</p>
                 </div>
-                <div class="col-md-7 form-area">
-                    <h3 class="fw-bold mb-4">Bize Yazın</h3>
+                <div class="col-md-8">
                     <form>
-                        <div class="mb-3"><input type="text" class="form-control" placeholder="Ad Soyad"></div>
-                        <div class="mb-3"><input type="email" class="form-control" placeholder="E-posta"></div>
-                        <div class="mb-4"><textarea class="form-control" rows="5" placeholder="Hukuki Danışmanlık Konusu"></textarea></div>
-                        <button type="submit" class="btn btn-law w-100">GÖNDER</button>
+                        <div class="row g-3">
+                            <div class="col-md-6"><input type="text" class="form-control" placeholder="Adınız Soyadınız"></div>
+                            <div class="col-md-6"><input type="email" class="form-control" placeholder="E-posta Adresiniz"></div>
+                            <div class="col-md-12"><textarea class="form-control" rows="5" placeholder="Danışmak İstediğiniz Konu"></textarea></div>
+                            <div class="col-md-12"><button type="submit" class="btn btn-red w-100 py-3">MESAJI GÖNDER</button></div>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container text-center">
-            <p>Av. Ekrem Volkan Özer - İstanbul Barosu © 2024</p>
-            <small>Bu web sitesi içeriği sadece bilgilendirme amaçlıdır.</small>
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0">Av. Ekrem Volkan Özer — İstanbul Barosu — Tüm Hakları Saklıdır © 2024</p>
         </div>
     </footer>
 
