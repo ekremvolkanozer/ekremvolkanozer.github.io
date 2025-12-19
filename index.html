@@ -1,918 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Av. Ekrem Volkan Özer | Hukuk & Danışmanlık</title>
-
-  <meta name="description" content="Av. Ekrem Volkan Özer (Kadıköy/İstanbul). Hukuki danışmanlık ve uyuşmazlık çözümü. Makaleler ve iletişim." />
-  <meta name="robots" content="index,follow" />
-
-  <style>
-    :root{
-      --bg: #0b0d12;
-      --panel: rgba(255,255,255,.06);
-      --panel2: rgba(255,255,255,.08);
-      --line: rgba(255,255,255,.12);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.70);
-      --muted2: rgba(255,255,255,.55);
-      --accent: #c9a227;
-      --accent2: #7dd3fc;
-      --radius: 18px;
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --max: 1100px;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: var(--sans);
-      color: var(--text);
-      background:
-        radial-gradient(1200px 700px at 15% -10%, rgba(201,162,39,.18), transparent 55%),
-        radial-gradient(900px 650px at 95% 0%, rgba(125,211,252,.12), transparent 50%),
-        radial-gradient(900px 650px at 30% 110%, rgba(201,162,39,.08), transparent 55%),
-        linear-gradient(180deg, #090b10 0%, #0b0d12 100%);
-      min-height:100vh;
-    }
-
-    a{color:inherit;text-decoration:none}
-    .container{width:min(var(--max), 92%); margin:0 auto}
-
-    /* Topbar */
-    .topbar{
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(14px);
-      background: linear-gradient(180deg, rgba(11,13,18,.78), rgba(11,13,18,.58));
-      border-bottom: 1px solid var(--line);
-    }
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding: 14px 0;
-      gap: 10px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap: 12px;
-      min-width: 220px;
-    }
-    .mark{
-      width: 36px;
-      height: 36px;
-      border-radius: 12px;
-      background:
-        radial-gradient(circle at 30% 25%, rgba(255,255,255,.70) 0 26%, transparent 27%),
-        linear-gradient(135deg, rgba(201,162,39,.95), rgba(255,255,255,.10));
-      border: 1px solid rgba(255,255,255,.18);
-      box-shadow: 0 14px 40px rgba(0,0,0,.45);
-    }
-    .brandTitle{
-      display:flex;
-      flex-direction:column;
-      line-height:1.05;
-    }
-    .brandTitle strong{
-      font-weight: 850;
-      letter-spacing: -.2px;
-    }
-    .brandTitle span{
-      font-family: var(--mono);
-      font-size: .82rem;
-      color: var(--muted2);
-      letter-spacing: .2px;
-      margin-top: 3px;
-    }
-
-    .navLinks{
-      display:flex;
-      align-items:center;
-      gap: 8px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    .pill{
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      color: var(--muted);
-      font-weight: 700;
-      font-size: .95rem;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease, color .12s ease;
-      user-select:none;
-      cursor:pointer;
-    }
-    .pill:hover{
-      background: rgba(255,255,255,.06);
-      border-color: rgba(255,255,255,.12);
-      color: var(--text);
-      transform: translateY(-1px);
-    }
-    .pill.cta{
-      background: rgba(201,162,39,.14);
-      border-color: rgba(201,162,39,.28);
-      color: var(--text);
-    }
-    .pill.cta:hover{
-      background: rgba(201,162,39,.20);
-      border-color: rgba(201,162,39,.38);
-    }
-
-    /* Hero */
-    .hero{
-      padding: 56px 0 26px;
-    }
-    .heroGrid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 18px;
-      align-items:stretch;
-    }
-    .heroMain{
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      box-shadow: var(--shadow);
-      padding: 26px;
-      position:relative;
-      overflow:hidden;
-    }
-    .heroMain:before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background: radial-gradient(800px 300px at 20% 0%, rgba(201,162,39,.18), transparent 55%);
-      pointer-events:none;
-    }
-    .heroKicker{
-      display:inline-flex;
-      gap:10px;
-      align-items:center;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.05);
-      color: var(--muted);
-      font-weight:800;
-      font-size: .9rem;
-      position:relative;
-      z-index:1;
-    }
-    .dot{
-      width:9px;height:9px;border-radius:99px;background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(201,162,39,.14);
-    }
-    h1{
-      margin: 14px 0 10px;
-      font-size: clamp(1.9rem, 2.8vw, 3.0rem);
-      line-height: 1.12;
-      letter-spacing: -.6px;
-      position:relative;
-      z-index:1;
-    }
-    .heroMain p{
-      margin: 0;
-      color: var(--muted);
-      max-width: 72ch;
-      position:relative;
-      z-index:1;
-    }
-    .heroActions{
-      display:flex;
-      gap: 10px;
-      flex-wrap:wrap;
-      margin-top: 18px;
-      position:relative;
-      z-index:1;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding: 11px 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-      font-weight: 850;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-      cursor:pointer;
-    }
-    .btn:hover{
-      transform: translateY(-1px);
-      background: rgba(255,255,255,.08);
-      border-color: rgba(255,255,255,.18);
-    }
-    .btn.primary{
-      background: rgba(201,162,39,.18);
-      border-color: rgba(201,162,39,.30);
-    }
-    .btn.primary:hover{
-      background: rgba(201,162,39,.24);
-      border-color: rgba(201,162,39,.40);
-    }
-
-    .heroSide{
-      display:grid;
-      gap: 12px;
-    }
-    .miniCard{
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.04);
-      padding: 18px;
-    }
-    .miniCard h3{
-      margin:0 0 8px;
-      font-size: 1.02rem;
-      letter-spacing: -.2px;
-    }
-    .miniCard p{
-      margin:0;
-      color: var(--muted);
-      font-size: .96rem;
-    }
-    .miniList{
-      margin: 10px 0 0;
-      padding: 0;
-      list-style:none;
-      display:grid;
-      gap: 8px;
-      color: var(--muted);
-      font-size: .95rem;
-    }
-    .miniList li{
-      display:flex; gap:10px; align-items:flex-start;
-    }
-    .miniList code{
-      font-family: var(--mono);
-      color: rgba(255,255,255,.75);
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.10);
-      padding: 2px 8px;
-      border-radius: 999px;
-      font-size: .82rem;
-    }
-
-    /* Sections */
-    .section{
-      padding: 26px 0 60px;
-    }
-    .sectionHeader{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap: 12px;
-      margin-bottom: 14px;
-    }
-    .sectionHeader h2{
-      margin:0;
-      font-size: 1.4rem;
-      letter-spacing:-.3px;
-    }
-    .sectionHeader p{
-      margin:0;
-      color: var(--muted);
-      max-width: 70ch;
-      font-size: .98rem;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    .card{
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.04);
-      padding: 18px;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-    }
-    .card:hover{
-      transform: translateY(-1px);
-      background: rgba(255,255,255,.05);
-      border-color: rgba(255,255,255,.16);
-    }
-    .card h3{
-      margin:0 0 8px;
-      font-size: 1.05rem;
-      letter-spacing:-.2px;
-    }
-    .card p{
-      margin:0;
-      color: var(--muted);
-      font-size: .96rem;
-    }
-    .tag{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      margin-top: 12px;
-      font-family: var(--mono);
-      font-size: .82rem;
-      color: rgba(255,255,255,.70);
-    }
-    .tag .b{
-      width:7px;height:7px;border-radius:99px;background: rgba(125,211,252,.9);
-      box-shadow: 0 0 0 4px rgba(125,211,252,.10);
-    }
-
-    /* Articles list */
-    .articles{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
-    .articleRow{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap: 14px;
-      padding: 16px 16px;
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.04);
-      cursor:pointer;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-    }
-    .articleRow:hover{
-      transform: translateY(-1px);
-      background: rgba(255,255,255,.05);
-      border-color: rgba(255,255,255,.16);
-    }
-    .articleTitle{
-      margin:0;
-      font-weight: 900;
-      letter-spacing:-.2px;
-    }
-    .articleMeta{
-      margin-top: 6px;
-      color: var(--muted2);
-      font-family: var(--mono);
-      font-size: .86rem;
-    }
-    .articleArrow{
-      flex: 0 0 auto;
-      color: rgba(255,255,255,.70);
-      font-weight:900;
-      margin-top: 2px;
-    }
-
-    /* Contact */
-    .contactGrid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    .kv{
-      display:grid;
-      gap: 10px;
-      margin-top: 12px;
-    }
-    .kvRow{
-      display:flex;
-      gap: 12px;
-      align-items:flex-start;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-    }
-    .kvRow .k{
-      width: 92px;
-      color: rgba(255,255,255,.65);
-      font-family: var(--mono);
-      font-size: .86rem;
-      padding-top: 2px;
-      flex: 0 0 auto;
-    }
-    .kvRow .v{
-      color: var(--text);
-      font-weight: 800;
-      font-size: .98rem;
-      line-height:1.35;
-      word-break: break-word;
-    }
-    .hint{
-      margin-top: 12px;
-      color: var(--muted2);
-      font-size: .92rem;
-    }
-
-    /* Footer */
-    .footer{
-      border-top: 1px solid var(--line);
-      padding: 28px 0 36px;
-      color: var(--muted2);
-      font-size: .92rem;
-    }
-    .footer strong{color: rgba(255,255,255,.82)}
-    .footerBox{
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.03);
-      padding: 16px;
-    }
-
-    /* Modal (Article reader) */
-    .modalOverlay{
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.55);
-      display:none;
-      align-items:flex-end;
-      justify-content:center;
-      padding: 18px;
-      z-index: 90;
-    }
-    .modalOverlay.open{display:flex}
-    .modal{
-      width: min(920px, 100%);
-      max-height: 86vh;
-      overflow:auto;
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(11,13,18,.92);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 22px 90px rgba(0,0,0,.55);
-    }
-    .modalHeader{
-      position: sticky;
-      top: 0;
-      background: linear-gradient(180deg, rgba(11,13,18,.98), rgba(11,13,18,.85));
-      border-bottom: 1px solid rgba(255,255,255,.10);
-      padding: 14px 16px;
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap: 12px;
-    }
-    .modalHeader h3{
-      margin:0;
-      font-size: 1.18rem;
-      letter-spacing:-.2px;
-    }
-    .modalHeader .sub{
-      margin-top: 6px;
-      color: var(--muted2);
-      font-family: var(--mono);
-      font-size: .86rem;
-    }
-    .closeBtn{
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      color: var(--text);
-      border-radius: 12px;
-      padding: 10px 12px;
-      cursor:pointer;
-      font-weight:900;
-      transition: transform .12s ease, background .12s ease;
-      flex: 0 0 auto;
-    }
-    .closeBtn:hover{transform: translateY(-1px); background: rgba(255,255,255,.08)}
-    .modalBody{
-      padding: 16px;
-      color: rgba(255,255,255,.86);
-      font-size: 1rem;
-      line-height: 1.75;
-    }
-    .modalBody h4{
-      margin: 18px 0 8px;
-      color: rgba(255,255,255,.92);
-      letter-spacing:-.1px;
-    }
-    .modalBody p{margin: 10px 0}
-    .modalBody ul{
-      margin: 10px 0 10px 18px;
-      color: rgba(255,255,255,.84);
-    }
-    .modalBody li{margin: 6px 0}
-    .note{
-      margin-top: 14px;
-      padding: 12px 14px;
-      border-radius: 16px;
-      border: 1px solid rgba(201,162,39,.25);
-      background: rgba(201,162,39,.08);
-      color: rgba(255,255,255,.82);
-      font-size: .92rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 980px){
-      .heroGrid{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr}
-      .contactGrid{grid-template-columns:1fr}
-      .brand{min-width:auto}
-    }
-  </style>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LegalService",
-    "name":"Av. Ekrem Volkan Özer | Hukuk & Danışmanlık",
-    "areaServed":"İstanbul",
-    "address":{
-      "@type":"PostalAddress",
-      "addressLocality":"İstanbul",
-      "addressCountry":"TR",
-      "streetAddress":"Hasanpaşa Mah. Uzunçayır Cad. Konak İş Merkezi A Blok No: 30 İç Kapı No: 30 Kadıköy/ İstanbul"
-    },
-    "telephone":"+90 532 680 08 97",
-    "email":"av.ekremvolkanozer@gmail.com"
-  }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Av. Ekrem Volkan Özer | Hukuk ve Danışmanlık</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary-color: #1a252f; --accent-color: #c7a44a; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; }
+        .navbar { background-color: var(--primary-color); border-bottom: 3px solid var(--accent-color); }
+        .hero { background: linear-gradient(rgba(26, 37, 47, 0.8), rgba(26, 37, 47, 0.8)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); 
+                background-size: cover; height: 80vh; display: flex; align-items: center; color: white; }
+        .btn-accent { background-color: var(--accent-color); color: white; border: none; }
+        .btn-accent:hover { background-color: #b08e3d; color: white; }
+        .section-padding { padding: 80px 0; }
+        .icon-box { color: var(--accent-color); font-size: 2.5rem; margin-bottom: 20px; }
+        footer { background-color: var(--primary-color); color: white; padding: 40px 0; }
+    </style>
 </head>
-
 <body>
 
-  <!-- TOPBAR -->
-  <div class="topbar">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="Ana sayfa">
-        <span class="mark" aria-hidden="true"></span>
-        <span class="brandTitle">
-          <strong>Av. Ekrem Volkan Özer</strong>
-          <span>Kadıköy · İstanbul</span>
-        </span>
-      </a>
-
-      <div class="navLinks" aria-label="Menü">
-        <a class="pill" href="#hakkimda">Hakkımda</a>
-        <a class="pill" href="#calisma">Çalışma Alanları</a>
-        <a class="pill" href="#makaleler">Makaleler</a>
-        <a class="pill cta" href="#iletisim">İletişim</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <div id="top" class="hero">
-    <div class="container heroGrid">
-      <div class="heroMain">
-        <div class="heroKicker"><span class="dot"></span> Hukuk & Danışmanlık</div>
-        <h1>Modern, planlı ve anlaşılır<br/>hukuki takip</h1>
-        <p>
-          Her dosya somut olaya göre değerlendirilir; süreç, belge ve süre yönetimiyle birlikte
-          şeffaf biçimde yürütülür.
-        </p>
-
-        <div class="heroActions">
-          <a class="btn primary" href="tel:+905326800897">📞 0532 680 08 97</a>
-          <a class="btn" href="mailto:av.ekremvolkanozer@gmail.com">✉️ E-posta</a>
-          <a class="btn" href="#makaleler">📰 Makaleler</a>
-        </div>
-      </div>
-
-      <div class="heroSide">
-        <div class="miniCard">
-          <h3>Yaklaşım</h3>
-          <p>Strateji · Delil · Süre</p>
-          <ul class="miniList">
-            <li><code>1</code> Ön değerlendirme & yol haritası</li>
-            <li><code>2</code> Evrak/delil düzeni ve takvim</li>
-            <li><code>3</code> Düzenli bilgilendirme</li>
-          </ul>
-        </div>
-
-        <div class="miniCard">
-          <h3>Hızlı erişim</h3>
-          <p>Sayfaya dağılmadan, net içerik.</p>
-          <div class="heroActions" style="margin-top:12px">
-            <a class="btn" href="#calisma">⚖️ Alanlar</a>
-            <a class="btn" href="#iletisim">📍 İletişim</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ABOUT -->
-  <section id="hakkimda" class="section">
-    <div class="container">
-      <div class="sectionHeader">
-        <div>
-          <h2>Hakkımda</h2>
-          <p>Minimal anlatım, net prensipler: dosya analizi, strateji, şeffaf takip.</p>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Mesleki Profil</h3>
-          <p>
-            İstanbul’da (Kadıköy) bağımsız avukat olarak faaliyet göstermekteyim.
-            Danışmanlık ve uyuşmazlık çözümünde, somut olayın şartlarına göre planlı ilerlerim.
-          </p>
-          <div class="tag"><span class="b"></span> İletişim + belge düzeni odaklı</div>
-        </div>
-
-        <div class="card">
-          <h3>Çalışma Prensibi</h3>
-          <p>
-            Standart kalıplar yerine, dosyanın ihtiyaçlarına uygun yol haritası çıkarılır.
-            Süreç boyunca anlaşılır bilgilendirme yapılır.
-          </p>
-          <div class="tag"><span class="b"></span> Süre & delil yönetimi</div>
-        </div>
-
-        <div class="card">
-          <h3>Bilgilendirme Notu</h3>
-          <p>
-            Bu site bilgilendirme amaçlıdır; somut olay bakımından değerlendirme, belge ve bilgi incelemesiyle yapılır.
-          </p>
-          <div class="tag"><span class="b"></span> Somut olaya göre değerlendirme</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRACTICE AREAS -->
-  <section id="calisma" class="section">
-    <div class="container">
-      <div class="sectionHeader">
-        <div>
-          <h2>Çalışma Alanları</h2>
-          <p>İhtiyaca göre danışmanlık ve temsil. (İstersen başlıkları daraltıp daha spesifik yaparız.)</p>
-        </div>
-        <div>
-          <a class="pill" href="#makaleler" style="display:inline-flex">Makaleler →</a>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Trafik Kazaları</h3>
-          <p>Değer kaybı, hasar tazminatı, ikame araç talepleri ve süreç yönetimi.</p>
-        </div>
-        <div class="card">
-          <h3>Sigorta Uyuşmazlıkları</h3>
-          <p>Sigorta şirketi başvuruları ve Sigorta Tahkim Komisyonu süreçleri.</p>
-        </div>
-        <div class="card">
-          <h3>İcra & Alacak Takibi</h3>
-          <p>İcra takipleri, itiraz süreçleri ve alacağın tahsiline yönelik işlemler.</p>
-        </div>
-        <div class="card">
-          <h3>Ticaret & Sözleşmeler</h3>
-          <p>Sözleşme hazırlama/inceleme, ihtarname ve ticari uyuşmazlık yönetimi.</p>
-        </div>
-        <div class="card">
-          <h3>Gayrimenkul</h3>
-          <p>Tapu uyuşmazlıkları, ortaklığın giderilmesi, kira ve tahliye süreçleri.</p>
-        </div>
-        <div class="card">
-          <h3>Ceza</h3>
-          <p>Soruşturma ve kovuşturma aşamalarında müdafilik/vekâlet hizmeti.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ARTICLES -->
-  <section id="makaleler" class="section">
-    <div class="container">
-      <div class="sectionHeader">
-        <div>
-          <h2>Makaleler</h2>
-          <p>Başlığa tıklayın — makale aynı sayfada, modern bir okuma penceresinde açılır.</p>
-        </div>
-      </div>
-
-      <div class="articles" id="articlesList"></div>
-
-      <div class="footer" style="padding-top:18px">
-        <div class="footerBox">
-          <strong>Not:</strong> Makaleler bilgilendirme amaçlıdır; somut olay için belge incelemesi gerekir.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="iletisim" class="section">
-    <div class="container">
-      <div class="sectionHeader">
-        <div>
-          <h2>İletişim</h2>
-          <p>Randevu ve bilgi için ulaşın.</p>
-        </div>
-      </div>
-
-      <div class="contactGrid">
-        <div class="card">
-          <h3>Randevu</h3>
-          <div class="kv">
-            <div class="kvRow">
-              <div class="k">Telefon</div>
-              <div class="v"><a href="tel:+905326800897">+90 532 680 08 97</a></div>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">AV. EKREM VOLKAN ÖZER</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#anasayfa">Ana Sayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hizmetler">Hizmetler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#iletisim">İletişim</a></li>
+                </ul>
             </div>
-            <div class="kvRow">
-              <div class="k">E-posta</div>
-              <div class="v"><a href="mailto:av.ekremvolkanozer@gmail.com">av.ekremvolkanozer@gmail.com</a></div>
+        </div>
+    </nav>
+
+    <section id="anasayfa" class="hero">
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold">Adalet ve Güven</h1>
+            <p class="lead mb-4">Hukuki sorunlarınıza profesyonel ve sonuç odaklı çözümler.</p>
+            <a href="tel:+905326800897" class="btn btn-accent btn-lg"><i class="fas fa-phone"></i> Hemen Arayın</a>
+        </div>
+    </section>
+
+    <section id="hizmetler" class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Çalışma Alanları</h2>
+                <div style="width: 60px; height: 3px; background: var(--accent-color); margin: 20px auto;"></div>
             </div>
-            <div class="kvRow">
-              <div class="k">Adres</div>
-              <div class="v">Hasanpaşa Mah. Uzunçayır Cad. Konak İş Merkezi A Blok No: 30 İç Kapı No: 30 Kadıköy/ İstanbul</div>
+            <div class="row g-4 text-center">
+                <div class="col-md-4">
+                    <div class="p-4 border rounded bg-white shadow-sm">
+                        <i class="fas fa-gavel icon-box"></i>
+                        <h4>Ceza Hukuku</h4>
+                        <p>Soruşturma ve kovuşturma aşamalarında titiz savunma stratejileri.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border rounded bg-white shadow-sm">
+                        <i class="fas fa-users icon-box"></i>
+                        <h4>Aile Hukuku</h4>
+                        <p>Boşanma, velayet ve nafaka süreçlerinde gizlilik esaslı danışmanlık.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border rounded bg-white shadow-sm">
+                        <i class="fas fa-building icon-box"></i>
+                        <h4>Gayrimenkul</h4>
+                        <p>Tapu uyuşmazlıkları, kira kontratları ve mülkiyet davaları yönetimi.</p>
+                    </div>
+                </div>
             </div>
-          </div>
-
-          <div class="heroActions" style="margin-top:14px">
-            <a class="btn primary" href="https://wa.me/905326800897" target="_blank" rel="noopener">💬 WhatsApp</a>
-            <a class="btn" href="#top">⬆️ Yukarı</a>
-          </div>
-
-          <div class="hint">Hafta içi 09:00–18:00 (Randevu ile)</div>
         </div>
+    </section>
 
-        <div class="card">
-          <h3>Bilgilendirme</h3>
-          <p>
-            Bu internet sitesi bilgilendirme amaçlıdır; içerikler hukuki görüş niteliğinde değildir.
-            Her somut olay kendi koşullarında değerlendirilir.
-          </p>
-          <p class="note" style="margin-bottom:0">
-            Avukatlık Kanunu ve meslek kuralları çerçevesinde reklam amacı taşımaz.
-          </p>
+    <section id="iletisim" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="fw-bold mb-4">İletişim Bilgileri</h2>
+                    <p><i class="fas fa-map-marker-alt me-2 text-accent"></i> Hasanpaşa Mah. Uzunçayır Cad. Konak İş Merkezi A Blok No: 30 İç Kapı No: 30 Kadıköy/ İstanbul</p>
+                    <p><i class="fas fa-phone me-2 text-accent"></i> +90 532 680 08 97</p>
+                    <p><i class="fas fa-envelope me-2 text-accent"></i> av.ekremvolkanozer@gmail.com</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="card p-4 shadow-sm">
+                        <h4 class="mb-3">Bize Mesaj Gönderin</h4>
+                        <form>
+                            <input type="text" class="form-control mb-3" placeholder="Adınız Soyadınız">
+                            <input type="email" class="form-control mb-3" placeholder="E-posta Adresiniz">
+                            <textarea class="form-control mb-3" rows="4" placeholder="Konu hakkındaki mesajınız"></textarea>
+                            <button class="btn btn-accent w-100">Gönder</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <div class="footer">
-    <div class="container">
-      <div class="footerBox">
-        © <span id="year"></span> <strong>Av. Ekrem Volkan Özer</strong> — Kadıköy / İstanbul
-      </div>
-    </div>
-  </div>
-
-  <!-- ARTICLE MODAL -->
-  <div class="modalOverlay" id="modalOverlay" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <div class="modalHeader">
-        <div>
-          <h3 id="modalTitle"></h3>
-          <div class="sub" id="modalSub"></div>
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2024 Av. Ekrem Volkan Özer. Tüm Hakları Saklıdır.</p>
+            <small>Bu site Türkiye Barolar Birliği Reklam Yasağı Yönetmeliği'ne uygun olarak tasarlanmıştır.</small>
         </div>
-        <button class="closeBtn" id="closeBtn" aria-label="Kapat">✕</button>
-      </div>
-      <div class="modalBody" id="modalBody"></div>
-    </div>
-  </div>
+    </footer>
 
-  <script>
-    // ---- CONTENT (edit here) ----
-    const ARTICLES = [
-      {
-        id: "deger-kaybi",
-        title: "Trafik Kazası Sonrası Araç Değer Kaybı: Şartlar, Başvuru ve Süreç",
-        date: "19 Aralık 2025",
-        readTime: "6 dk",
-        content: `
-          <p>Bu yazı, trafik kazası sonrası <strong>araç değer kaybı</strong> talebinin genel çerçevesini özetler. Uygulamada her dosya; kusur, hasar ve piyasa verileri açısından ayrıca değerlendirilir.</p>
-
-          <h4>Değer kaybı nedir?</h4>
-          <p>Kaza sonrası araç onarılsa bile, ikinci el piyasasında araçta oluşan “piyasa düşüşü” değer kaybı olarak adlandırılır.</p>
-
-          <h4>Genel olarak hangi unsurlar önemlidir?</h4>
-          <ul>
-            <li>Kusur durumu (tam/karşı/ortak kusur ihtimalleri)</li>
-            <li>Hasarın niteliği, değişen/işlem gören parçalar</li>
-            <li>Aracın yaşı, kilometresi ve piyasa koşulları</li>
-            <li>Ekspertiz ve hesaplama yöntemi</li>
-          </ul>
-
-          <h4>Başvuru mantığı (genel)</h4>
-          <p>Uygulamada çoğunlukla sigorta şirketine başvuru ile başlanır; sonuç alınamazsa somut duruma göre farklı başvuru yolları değerlendirilir.</p>
-
-          <div class="note"><strong>Not:</strong> Bu metin bilgilendirme amaçlıdır. Somut olayınız için evrak incelemesi gerekir.</div>
-        `
-      },
-      {
-        id: "ikame-arac",
-        title: "İkame Araç Talebi: Hangi Hallerde İstenebilir?",
-        date: "19 Aralık 2025",
-        readTime: "4 dk",
-        content: `
-          <p>Kaza nedeniyle aracın kullanılamadığı dönemde, koşullara göre <strong>ikame araç</strong> veya kullanım mahrumiyeti talepleri gündeme gelebilir. Uygun talep türü, dosyanın şartlarına göre belirlenir.</p>
-
-          <h4>Genel olarak dikkat edilen noktalar</h4>
-          <ul>
-            <li>Onarım süresi ve aracın fiilen kullanılamaması</li>
-            <li>Belgelendirme (servis kayıtları, iş emri, yazışmalar)</li>
-            <li>Talebin kapsamı ve somut ihtiyacın ispatı</li>
-          </ul>
-
-          <h4>Belge düzeni</h4>
-          <p>Servis kayıtları ve onarım sürecine ilişkin evraklar önemlidir. Somut dosyaya göre gerekli belgeler değişebilir.</p>
-
-          <div class="note"><strong>Not:</strong> Bu metin bilgilendirme amaçlıdır. Somut olayınız için evrak incelemesi gerekir.</div>
-        `
-      },
-      {
-        id: "sigorta-tahkim",
-        title: "Sigorta Tahkim Komisyonu Nedir? Ne Zaman Tercih Edilir?",
-        date: "19 Aralık 2025",
-        readTime: "5 dk",
-        content: `
-          <p><strong>Sigorta Tahkim Komisyonu</strong>, sigorta uyuşmazlıklarında belirli şartlar dahilinde başvurulabilen bir çözüm yoludur.</p>
-
-          <h4>Genel süreç</h4>
-          <ul>
-            <li>Önce sigorta şirketine başvuru</li>
-            <li>Gerekli evrakların tamamlanması</li>
-            <li>Başvuru ve hakem incelemesi</li>
-          </ul>
-
-          <h4>Ne zaman değerlendirilir?</h4>
-          <p>Dosyanın türü, delil durumu ve süreler dikkate alınarak tahkim veya diğer yollar bakımından strateji belirlenir.</p>
-
-          <div class="note"><strong>Not:</strong> Bu metin bilgilendirme amaçlıdır. Somut olayınız için evrak incelemesi gerekir.</div>
-        `
-      }
-    ];
-
-    // ---- Render article list ----
-    const listEl = document.getElementById("articlesList");
-    function renderArticles(){
-      listEl.innerHTML = "";
-      ARTICLES.forEach(a => {
-        const row = document.createElement("div");
-        row.className = "articleRow";
-        row.tabIndex = 0;
-        row.setAttribute("role","button");
-        row.setAttribute("aria-label", a.title);
-        row.innerHTML = `
-          <div>
-            <div class="articleTitle">${escapeHtml(a.title)}</div>
-            <div class="articleMeta">${escapeHtml(a.date)} · ${escapeHtml(a.readTime)}</div>
-          </div>
-          <div class="articleArrow">↗</div>
-        `;
-        row.onclick = () => openModal(a.id);
-        row.onkeydown = (e) => { if(e.key === "Enter" || e.key === " ") openModal(a.id); };
-        listEl.appendChild(row);
-      });
-    }
-
-    // ---- Modal logic ----
-    const overlay = document.getElementById("modalOverlay");
-    const closeBtn = document.getElementById("closeBtn");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalSub = document.getElementById("modalSub");
-    const modalBody = document.getElementById("modalBody");
-
-    function openModal(id){
-      const a = ARTICLES.find(x => x.id === id);
-      if(!a) return;
-      modalTitle.textContent = a.title;
-      modalSub.textContent = `${a.date} · ${a.readTime}`;
-      modalBody.innerHTML = a.content;
-
-      overlay.classList.add("open");
-      overlay.setAttribute("aria-hidden","false");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeModal(){
-      overlay.classList.remove("open");
-      overlay.setAttribute("aria-hidden","true");
-      document.body.style.overflow = "";
-    }
-
-    overlay.addEventListener("click", (e) => {
-      if(e.target === overlay) closeModal();
-    });
-    closeBtn.addEventListener("click", closeModal);
-    document.addEventListener("keydown", (e) => {
-      if(e.key === "Escape" && overlay.classList.contains("open")) closeModal();
-    });
-
-    function escapeHtml(str){
-      return String(str || "")
-        .replaceAll("&","&amp;")
-        .replaceAll("<","&lt;")
-        .replaceAll(">","&gt;")
-        .replaceAll('"',"&quot;")
-        .replaceAll("'","&#039;");
-    }
-
-    // year + init
-    document.getElementById("year").textContent = new Date().getFullYear();
-    renderArticles();
-  </script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
