@@ -9,38 +9,42 @@
     <style>
         :root { 
             --french-blue: #002654; 
-            --heritage-red: #A6192E; /* İstediğiniz Heritage Red tonu */
+            --royal-red: #D2122E; /* Canlı, asil ve belirgin kırmızı */
             --french-white: #ffffff;
         }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--french-white); color: #333; }
         
         /* Navigasyon */
-        .navbar { background-color: var(--french-blue); border-bottom: 3px solid var(--heritage-red); }
-        .navbar-brand, .nav-link { color: white !important; font-weight: bold; }
-        .nav-link:hover { color: var(--heritage-red) !important; }
+        .navbar { background-color: var(--french-blue); border-bottom: 4px solid var(--royal-red); }
+        .navbar-brand, .nav-link { color: white !important; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+        .nav-link:hover { color: var(--royal-red) !important; }
 
         /* Hero Bölümü */
         .hero { 
-            background: linear-gradient(rgba(0,38,84,0.7), rgba(0,38,84,0.7)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1350&q=80'); 
+            background: linear-gradient(rgba(0,38,84,0.75), rgba(0,38,84,0.75)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1350&q=80'); 
             background-size: cover; height: 65vh; display: flex; align-items: center; color: white; 
         }
         
-        /* Ortak Vurgular */
-        .btn-french { background-color: var(--heritage-red); color: white; border: none; font-weight: bold; transition: 0.3s; }
-        .btn-french:hover { background-color: #8a1425; color: white; transform: scale(1.05); }
-        .section-title { color: var(--french-blue); font-weight: bold; margin-bottom: 40px; position: relative; }
-        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--heritage-red); margin: 10px auto; }
-        .icon-box { color: var(--french-blue); font-size: 2.5rem; margin-bottom: 15px; }
+        /* Vurgu Butonları */
+        .btn-french { background-color: var(--royal-red); color: white; border: none; font-weight: bold; padding: 12px 30px; transition: 0.3s; }
+        .btn-french:hover { background-color: #b00e26; color: white; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(210, 18, 46, 0.4); }
         
-        /* Kartlar */
-        .card { border: none; border-bottom: 5px solid var(--french-blue); transition: all 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .card:hover { border-bottom-color: var(--heritage-red); transform: translateY(-10px); }
+        .section-title { color: var(--french-blue); font-weight: 800; margin-bottom: 40px; }
+        .section-title::after { content: ''; display: block; width: 80px; height: 5px; background: var(--royal-red); margin: 15px auto; }
+        
+        /* İkonlar ve Kartlar */
+        .icon-box { color: var(--royal-red); font-size: 2.8rem; margin-bottom: 15px; }
+        .card { border: none; border-top: 5px solid var(--french-blue); transition: all 0.3s; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .card:hover { border-top-color: var(--royal-red); transform: translateY(-10px); }
 
         /* Makale Linkleri */
-        .article-link { text-decoration: none; color: #333; display: block; padding: 12px; border-bottom: 1px solid #eee; transition: 0.2s; }
-        .article-link:hover { background-color: #f8f9fa; color: var(--heritage-red); padding-left: 20px; }
+        .article-link { text-decoration: none; color: #333; display: block; padding: 15px; border-bottom: 1px solid #eee; transition: 0.2s; font-weight: 500; }
+        .article-link:hover { background-color: #fff5f6; color: var(--royal-red); padding-left: 25px; }
 
-        footer { background-color: var(--french-blue); color: white; padding: 30px 0; border-top: 5px solid var(--heritage-red); }
+        /* İletişim Bilgileri */
+        .contact-icon { color: var(--royal-red); width: 30px; }
+
+        footer { background-color: var(--french-blue); color: white; padding: 40px 0; border-top: 6px solid var(--royal-red); }
     </style>
 </head>
 <body>
@@ -64,42 +68,42 @@
 
     <section id="anasayfa" class="hero text-center">
         <div class="container">
-            <h1 class="display-4 fw-bold text-uppercase">Hukuki Danışmanlık ve Savunma</h1>
-            <p class="lead">Profesyonel Yaklaşım, Güçlü Temsiliyet.</p>
-            <a href="tel:+905326800897" class="btn btn-french btn-lg mt-3 shadow-sm">İletişime Geçin</a>
+            <h1 class="display-3 fw-bold text-uppercase mb-3">Hukuki Çözüm Merkezi</h1>
+            <p class="lead fs-3 mb-4">Adalet, Güven ve Profesyonel Temsiliyet.</p>
+            <a href="tel:+905326800897" class="btn btn-french btn-lg shadow">RANDEVU ALIN</a>
         </div>
     </section>
 
     <section id="hizmetler" class="py-5">
         <div class="container">
-            <h2 class="text-center section-title">Çalışma Alanlarımız</h2>
+            <h2 class="text-center section-title text-uppercase">Çalışma Alanlarımız</h2>
             <div class="row g-4 text-center">
                 <div class="col-md-3">
                     <div class="card h-100 p-4">
                         <i class="fas fa-car-crash icon-box"></i>
                         <h5 class="fw-bold">Sigorta & Trafik</h5>
-                        <p class="small text-muted">Kaza sonrası tazminat ve sigorta uyuşmazlıkları süreçleri.</p>
+                        <p class="small text-muted">Kaza sonrası maddi-manevi tazminat ve sigorta rücu süreçleri.</p>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card h-100 p-4">
-                        <i class="fas fa-balance-scale icon-box"></i>
+                        <i class="fas fa-gavel icon-box"></i>
                         <h5 class="fw-bold">Ceza Hukuku</h5>
-                        <p class="small text-muted">Soruşturma aşamasından infaza kadar etkin savunma.</p>
+                        <p class="small text-muted">Ağır ceza ve asliye ceza mahkemelerinde savunma stratejileri.</p>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card h-100 p-4">
                         <i class="fas fa-users icon-box"></i>
                         <h5 class="fw-bold">Aile Hukuku</h5>
-                        <p class="small text-muted">Boşanma, mal paylaşımı ve velayet davalarında danışmanlık.</p>
+                        <p class="small text-muted">Boşanma, velayet, nafaka ve mal paylaşımı uyuşmazlıkları.</p>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="card h-100 p-4">
-                        <i class="fas fa-city icon-box"></i>
+                        <i class="fas fa-building icon-box"></i>
                         <h5 class="fw-bold">Gayrimenkul</h5>
-                        <p class="small text-muted">Tapu iptal, tescil ve kentsel dönüşüm hukuku.</p>
+                        <p class="small text-muted">Tapu tescil, kira uyuşmazlıkları ve mülkiyet hukuku.</p>
                     </div>
                 </div>
             </div>
@@ -108,30 +112,26 @@
 
     <section id="makaleler" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center section-title">Makaleler ve Yayınlar</h2>
+            <h2 class="text-center section-title text-uppercase">Güncel Makaleler</h2>
             <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <div class="bg-white p-4 rounded shadow-sm border-start border-4 border-primary">
-                        <h5 class="mb-4 fw-bold text-dark">Son Hukuki Değerlendirmeler</h5>
-                        
+                <div class="col-md-9 mx-auto">
+                    <div class="bg-white p-2 rounded shadow-sm border-top border-4 border-danger">
                         <a href="#" class="article-link">
                             <div class="d-flex justify-content-between align-items-center">
-                                <span><i class="fas fa-file-signature me-2" style="color: var(--french-blue);"></i> Trafik Kazalarında Değer Kaybı Başvurusu</span>
-                                <i class="fas fa-arrow-right small text-muted"></i>
+                                <span><i class="fas fa-chevron-right me-3 text-danger"></i> Trafik Kazalarında Değer Kaybı Nasıl Alınır?</span>
+                                <span class="badge bg-light text-dark">Yeni</span>
                             </div>
                         </a>
-                        
                         <a href="#" class="article-link">
                             <div class="d-flex justify-content-between align-items-center">
-                                <span><i class="fas fa-file-signature me-2" style="color: var(--french-blue);"></i> Yeni Kira Yasası ve Tahliye Şartları</span>
-                                <i class="fas fa-arrow-right small text-muted"></i>
+                                <span><i class="fas fa-chevron-right me-3 text-danger"></i> Sigorta Tahkim Komisyonu Başvuru Şartları</span>
+                                <span class="badge bg-light text-dark">Rehber</span>
                             </div>
                         </a>
-                        
                         <a href="#" class="article-link">
                             <div class="d-flex justify-content-between align-items-center">
-                                <span><i class="fas fa-file-signature me-2" style="color: var(--french-blue);"></i> Sigorta Rücu Davalarında Savunma Stratejileri</span>
-                                <i class="fas fa-arrow-right small text-muted"></i>
+                                <span><i class="fas fa-chevron-right me-3 text-danger"></i> E-Ticaret Hukukunda Tüketici Hakları</span>
+                                <span class="badge bg-light text-dark">İnceleme</span>
                             </div>
                         </a>
                     </div>
@@ -142,24 +142,24 @@
 
     <section id="iletisim" class="py-5">
         <div class="container">
-            <h2 class="text-center section-title">İletişim</h2>
+            <h2 class="text-center section-title text-uppercase">Bize Ulaşın</h2>
             <div class="row g-5">
                 <div class="col-md-5">
-                    <div class="p-4 bg-light rounded shadow-sm h-100">
-                        <h4 class="fw-bold mb-4" style="color: var(--french-blue);">Ofis Bilgileri</h4>
-                        <p><i class="fas fa-map-marker-alt me-2" style="color: var(--heritage-red);"></i> Hasanpaşa Mah. Uzunçayır Cad. Konak İş Merkezi A Blok No: 30 İç Kapı No: 30 Kadıköy/ İstanbul</p>
-                        <p><i class="fas fa-phone-alt me-2" style="color: var(--heritage-red);"></i> <a href="tel:+905326800897" class="text-decoration-none text-dark">+90 532 680 08 97</a></p>
-                        <p><i class="fas fa-envelope me-2" style="color: var(--heritage-red);"></i> av.ekremvolkanozer@gmail.com</p>
+                    <div class="p-4 bg-light rounded h-100 border-start border-5 border-primary">
+                        <h4 class="fw-bold mb-4" style="color: var(--french-blue);">İletişim Bilgileri</h4>
+                        <p><i class="fas fa-map-marker-alt contact-icon"></i> Hasanpaşa Mah. Uzunçayır Cad. Konak İş Merkezi A Blok No: 30 İç Kapı No: 30 Kadıköy/ İstanbul</p>
+                        <p><i class="fas fa-phone-alt contact-icon"></i> <a href="tel:+905326800897" class="text-decoration-none text-dark fw-bold">+90 532 680 08 97</a></p>
+                        <p><i class="fas fa-envelope contact-icon"></i> av.ekremvolkanozer@gmail.com</p>
                     </div>
                 </div>
                 <div class="col-md-7">
-                    <form class="p-4 border rounded shadow-sm">
+                    <form class="p-4 border rounded shadow-sm bg-white">
                         <div class="row">
-                            <div class="col-md-6 mb-3"><input type="text" class="form-control" placeholder="Adınız"></div>
-                            <div class="col-md-6 mb-3"><input type="email" class="form-control" placeholder="E-posta"></div>
+                            <div class="col-md-6 mb-3"><input type="text" class="form-control form-control-lg" placeholder="Adınız"></div>
+                            <div class="col-md-6 mb-3"><input type="email" class="form-control form-control-lg" placeholder="E-posta"></div>
                         </div>
-                        <div class="mb-3"><textarea class="form-control" rows="4" placeholder="Mesajınız"></textarea></div>
-                        <button type="submit" class="btn btn-french w-100 p-2">Mesajı Gönder</button>
+                        <div class="mb-3"><textarea class="form-control form-control-lg" rows="4" placeholder="Mesajınız"></textarea></div>
+                        <button type="submit" class="btn btn-french w-100 btn-lg text-uppercase">Mesajı Gönder</button>
                     </form>
                 </div>
             </div>
@@ -168,8 +168,8 @@
 
     <footer>
         <div class="container text-center">
-            <p class="mb-1 fw-bold">Av. Ekrem Volkan Özer</p>
-            <p class="small opacity-75">© 2024 Tüm Hakları Saklıdır.</p>
+            <h4 class="fw-bold mb-2">Av. Ekrem Volkan Özer</h4>
+            <p class="small opacity-75 mb-0">© 2024 Tüm Hakları Saklıdır. Kadıköy, İstanbul.</p>
         </div>
     </footer>
 
